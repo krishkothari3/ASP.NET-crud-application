@@ -1,0 +1,93 @@
+﻿@using System.Data;
+<style>
+    .table-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+<div class="table-container">
+    <h1>Country List</h1>
+    <a class="btn btn-success" asp-action="LOC_CountryAddEdit" asp-controller="LOC_Country">Add Country</a>
+</div>
+<div>
+    @*<form method="post" asp-action="Index" asp-controller="LOC_Country">
+        <input type="text" name="CountryName" asp-controller="LOC_Country" placeholder="Search Name" />
+        <button type="submit" class="btn btn-success"/>Search</button>
+    </form>*@
+    <input type="text" onkeyup="searchFun()" class="form-control" id="myInput" placeholder="search by country name"/>
+</div>
+<hr />
+<table class="table table-dark table-striped" id="myTable">
+    <thead>
+        <tr>
+            <td>
+                Country Name
+            </td>
+            <td>
+                Country Code
+            </td>
+            <td>
+                Created
+            </td>
+            <td>
+                Modified
+            </td>
+            <td colspan="2"><center>Operations</center></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataRow dt in Model.Rows)
+        {
+            <tr>
+                <td>
+                    @dt["CountryName"]
+                </td>
+                <td>
+                    @dt["CountryCode"]
+                </td>
+                <td>
+                    @Convert.ToDateTime(dt["Created"]).ToString("d")
+                </td>
+                <td>
+                    @Convert.ToDateTime(dt["Modified"]).ToString("d")
+                </td>
+                <td>
+                    <form method="post" asp-action="SelectByPK" asp-controller="LOC_Country">
+                        <input type="hidden" name="CountryID" value="@int.Parse(dt["CountryID"].ToString())"/>
+                        <button type="submit" class="btn btn-warning">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="DeleteByPK" asp-controller="LOC_Country">
+                        <input type="hidden" name="CountryID" value="@int.Parse(dt["CountryID"].ToString())"/>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts{
+    <script>
+        function searchFun(){
+            let filter = document.getElementById("myInput").value.toUpperCase();
+            let myTable = document.getElementById("myTable");
+            let tr = myTable.getElementsByTagName("tr");
+            for(var i=1; i<tr.length; i++)
+            {
+                let countryName = tr[i].getElementsByTagName("td")[0];
+
+                if (countryName) {
+                    let textValue = countryName.textContext || countryName.innerHTML;
+
+                    if(textValue.toUpperCase().indexOf(filter) > -1){
+                        tr[i].style.display = "";
+                    }else{
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+}

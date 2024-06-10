@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "City Add/Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model AddressBook.Areas.LOC_City.Models.LOC_CityModel;
+@using System.Data;
+
+<div>
+    <form method="post" asp-area="LOC_City" asp-action="Add" asp-controller="LOC_City">
+        @Html.HiddenFor(x=>x.CityID)
+        <div class="mb-3">
+            <label class="form-label">City Name</label>
+            <input type="text" placeholder="Enter City Name" value="@Model?.CityName" asp-for="CityName" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <select id="CountryList" class="form-control" asp-for="CountryID" asp-items="@ViewBag.Countries">
+                <option disabled selected>Select Country</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <select id="StateList" class="form-control" asp-for="StateID" asp-items="@ViewBag.StateList">
+                <option disabled selected>Select States</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">City Code</label>
+            <input type="text" placeholder="Enter City Code" value="@Model?.CityCode" asp-for="CityCode" class="form-control" />
+        </div>
+        <hr />
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+</div>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#CountryList").on("change", function () {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("FillStateDDl","LOC_City")",
+                    data: { "CountryId": $("#CountryList").val() },
+                    success: function (response) {
+                        var items = '';
+                        console.log(response);
+                        $(response).each(function () {
+                            items += "<option value=" + this.stateID + ">" + this.stateName + "</option>";
+                        })
+                        $("#StateList").html(items);
+                    },
+                })
+            })
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#StateList").on("change", function () {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("FillCountryDDL","LOC_City")",
+                    data: { "StateID": $("#StateList").val() },
+                    success: function (response) {
+                        var items = '';
+                        console.log(response);
+                        $(response).each(function () {
+                            items += "<option value=" + this.countryID + ">" + this.countryName + "</option>";
+                        })
+                        $("#CountryList").html(items);
+                    },
+                })
+            })
+        })
+    </script>
+}
+
+

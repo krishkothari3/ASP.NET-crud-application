@@ -1,0 +1,93 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AddressBook
+build_property.RootNamespace = AddressBook
+build_property.ProjectDir = F:\ASP.NET\AddressBook\AddressBook\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = F:\ASP.NET\AddressBook\AddressBook
+build_property._RazorSourceGeneratorDebug = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Areas/LOC_Branch/Views/LOC_Branch/AddBranch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0JyYW5jaFxWaWV3c1xMT0NfQnJhbmNoXEFkZEJyYW5jaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Areas/LOC_Branch/Views/LOC_Branch/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0JyYW5jaFxWaWV3c1xMT0NfQnJhbmNoXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Areas/LOC_Branch/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0JyYW5jaFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Areas/LOC_Cascade/Views/LOC_Cascade/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0Nhc2NhZGVcVmlld3NcTE9DX0Nhc2NhZGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Areas/LOC_Cascade/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0Nhc2NhZGVcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Areas/LOC_City/Views/LOC_City/LOC_CityAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NpdHlcVmlld3NcTE9DX0NpdHlcTE9DX0NpdHlBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Areas/LOC_City/Views/LOC_City/LOC_CityList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NpdHlcVmlld3NcTE9DX0NpdHlcTE9DX0NpdHlMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Areas/LOC_City/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NpdHlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Views/LOC_Country/LOC_CountryAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTE9DX0NvdW50cnlcTE9DX0NvdW50cnlBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Views/LOC_Country/LOC_CountryList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTE9DX0NvdW50cnlcTE9DX0NvdW50cnlMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Views/LOC_State/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTE9DX1N0YXRlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Views/LOC_State/LOC_StateAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTE9DX1N0YXRlXExPQ19TdGF0ZUFkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ASP.NET/AddressBook/AddressBook/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-nau3wh5r6d

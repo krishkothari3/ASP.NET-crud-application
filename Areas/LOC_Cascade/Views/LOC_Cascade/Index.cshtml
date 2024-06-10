@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Cascade Dropdown";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Cascade Dropdown</h1>
+<select id="CountryList" asp-items="@ViewBag.CountryList">
+    <option value="-1">Select Country</option>
+</select>
+<select id="StateList">
+
+</select>
+@section scripts{
+    <script>
+        $(document).ready(function (){
+            $("#CountryList").on("change",function (){
+                $.ajax({
+                    type:"POST",
+                    url:"@Url.Action("GetState","LOC_Cascade")",
+                    data:{"CountryId":$("#CountryList").val()},
+                    success:function (response){
+                        var items = '';
+                       // console.log(response); 
+                        $(response).each(function (){
+                            items += "<option value=" +this.id + ">" + this.name + "</option>";
+                        })
+                        $("#StateList").html(items);
+                    },
+                })
+            })
+        })
+    </script>
+}

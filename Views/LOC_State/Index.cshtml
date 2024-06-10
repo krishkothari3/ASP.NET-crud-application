@@ -1,0 +1,69 @@
+﻿@using System.Data;
+<style>
+    .table-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+<div class="table-container">
+    <h1>State List</h1>
+    <a class="btn btn-success" asp-action="AddEditState" asp-controller="LOC_State">Add New State</a>
+</div>
+<hr />
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <td>
+                Country Name
+            </td>
+            <td>
+                Country Code
+            </td>
+            <td>
+                State Code
+            </td>
+            <td>
+                Created
+            </td>
+            <td>
+                Modified
+            </td>
+            <td colspan="2"><center>Operations</center></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataRow dt in Model.Rows)
+        {
+            <tr>
+                <td>
+                    @dt["CountryName"]
+                </td>
+                <td>
+                    @dt["StateName"]
+                </td>
+                <td>
+                    @dt["StateCode"]
+                </td>
+                <td>
+                    @Convert.ToDateTime(dt["Created"]).ToString("d")
+                </td>
+                <td>
+                    @Convert.ToDateTime(dt["Modified"]).ToString("d")
+                </td>
+                <td>  
+                    <form method="post" asp-action="SelectByPK" asp-controller="LOC_State">
+                        <input type="hidden" name="StateID" value="@int.Parse(dt["StateID"].ToString())" />
+                        <button type="submit" class="btn btn-warning">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="DeleteByPK" asp-controller="LOC_State">
+                        <input type="hidden" name="StateID" value="@int.Parse(dt["StateID"].ToString())" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

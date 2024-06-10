@@ -1,0 +1,19 @@
+﻿@using System.Data
+@model LOC_CountryModel
+<div>
+    <form method="post" asp-action="AddEditCountry" asp-controller="LOC_Country">
+        <div class="mb-3">
+            <label class="form-label">Country Name</label>
+            <input type="text" placeholder="Enter Country Name" value="@Model?.CountryName" asp-for="CountryName" class="form-control"/>
+            @Html.ValidationMessageFor(m => m.CountryName,null,new{@class = "text-danger"})
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Country Code</label>
+            <input type="text" placeholder="Enter Country Code" value="@Model?.CountryCode" asp-for="CountryCode" class="form-control" />
+            @Html.ValidationMessageFor(m => m.CountryCode,null,new{@class = "text-danger"})
+        </div>
+        <input type="hidden" name="CountryID" value="@Model?.CountryId">
+        <hr />
+        <button type="submit">Save</button>
+    </form>
+</div>

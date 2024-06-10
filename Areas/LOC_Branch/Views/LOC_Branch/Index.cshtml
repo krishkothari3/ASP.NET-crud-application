@@ -1,0 +1,68 @@
+﻿@using System.Data;
+@{
+    ViewData["Title"] = "Brnach List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .table-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+<div class="table-container">
+    <h1>Branch List</h1>
+    <a class="btn btn-success" asp-area="LOC_Branch" asp-action="AddBranch" asp-controller="LOC_Branch">Add New Branch</a>
+</div>
+<hr />
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <td>
+                Branch Name
+            </td>
+            <td>
+                Branch Code
+            </td>
+            <td>
+                Created
+            </td>
+            <td>
+                Modified
+            </td>
+            <td colspan="2"><center>Operations</center></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataRow dt in Model.Rows)
+        {
+            <tr>
+                <td>
+                    @dt["BranchName"]
+                </td>
+                <td>
+                    @dt["BranchCode"]
+                </td>
+                <td>
+                    @Convert.ToDateTime(dt["Created"]).ToString("d")
+                </td>
+                <td>
+                    @Convert.ToDateTime(dt["Modified"]).ToString("d")
+                </td>
+                <td>
+                    <form method="post" asp-area="LOC_Branch" asp-action="SelectByPK" asp-controller="LOC_Branch">
+                        <input type="hidden" name="BranchID" value="@int.Parse(dt["BranchID"].ToString())" />
+                        @*<input type="hidden" name="" value="" />*@
+                        <button type="submit" class="btn btn-warning">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post"asp-area="LOC_Branch" asp-action="DeleteByPK" asp-controller="LOC_Branch">
+                        <input type="hidden" name="BranchID" value="@int.Parse(dt["BranchID"].ToString())" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

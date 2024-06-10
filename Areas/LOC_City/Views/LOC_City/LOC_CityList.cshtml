@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "City List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Data;
+@model DataTable;
+<style>
+    .table-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+<div class="table-container">
+    <h1>City List</h1>
+    <a class="btn btn-success" asp-area="LOC_City" asp-action="AddForm" asp-controller="LOC_City">Add New City</a>
+</div>
+<hr />
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <td>
+                City Name
+            </td>
+            <td>
+                City Code
+            </td>
+            <td>
+                State Name
+            </td>
+            <td>
+                Country Name
+            </td>
+            <td>
+                Created
+            </td>
+            <td>
+                Modified
+            </td>
+            <td colspan="2"><center>Operations</center></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataRow dt in Model.Rows)
+        {
+            <tr>
+                <td>
+                    @dt["CityName"]
+                </td>
+                <td>
+                    @dt["CityCode"]
+                </td>
+                <td>
+                    @dt["StateName"]
+                </td>
+                <td>
+                    @dt["CountryName"]
+                </td>
+                <td>
+                    @Convert.ToDateTime(dt["CreationDate"]).ToString("d")
+                </td>
+                <td>
+                    @Convert.ToDateTime(dt["Modified"]).ToString("d")
+                </td>
+                <td>
+                    <form method="post" asp-area="LOC_City" asp-action="SelectByPK" asp-controller="LOC_City">
+                        <input type="hidden" name="CityID" value="@int.Parse(dt["CityID"].ToString())" />
+                        <input type="hidden" name="CountryID" value="@int.Parse(dt["CountryID"].ToString())"/> 
+                        <button type="submit" class="btn btn-warning">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="DeleteByPK" asp-controller="LOC_City">
+                        <input type="hidden" name="CityID" value="@int.Parse(dt["CityID"].ToString())" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

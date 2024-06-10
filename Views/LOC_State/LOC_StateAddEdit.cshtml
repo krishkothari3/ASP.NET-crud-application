@@ -1,0 +1,23 @@
+﻿@using System.Data
+@model LOC_StateModel
+<div>
+    <form method="post" asp-action="Add" asp-controller="LOC_State">
+        @Html.HiddenFor(x=>x.StateId)
+        <div class="mb-3">
+            <select id="inputState" class="form-control" asp-for="CountryID" asp-items="@(new SelectList(ViewBag.CountryList,"CountryID","CountryName"))">
+                <option disabled selected>Select Country</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">State Name</label>
+            <input type="text" placeholder="Enter State Name" value="@Model?.StateName" asp-for="StateName" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">State Code</label>    
+            <input type="text" placeholder="Enter State Code" value="@Model?.StateCode" asp-for="StateCode" class="form-control" />
+        </div>
+        <input type="hidden" name="StateId" value="@Model?.StateId">
+        <hr />
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+</div>

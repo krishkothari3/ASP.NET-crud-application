@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Brnach List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model AddressBook.Areas.LOC_Branch.Models.LOC_BranchModel;
+<form method="post" asp-area="LOC_Branch" asp-action="Save" asp-controller="LOC_Branch">
+    @Html.HiddenFor(x=>x.BranchID)
+    <div class="mb-3">
+        <label>Branch Name:</label>
+        <input type="text" class="form-control" asp-for="BranchName" value="@Model?.BranchName" placeholder="Enter Branch Name" />
+    </div>
+    <div class="mb-3">
+        <label>Branch Code:</label>
+        <input type="text" class="form-control" asp-for="BranchCode" value="@Model?.BranchCode" placeholder="Enter Branch Code" />
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
